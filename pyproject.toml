@@ -1,0 +1,67 @@
+[build-system]
+requires = [ "poetry-core",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "r3onboard"
+version = "0.1.43"
+description = "Remote.it Onboarding Tool for setting up devices using ble"
+authors = [ "Evan Bowers <evan@remote.it>",]
+readme = "README.md"
+
+[tool.black]
+line-length = 88
+target-version = [ "py36", "py37", "py38", "py39", "py310",]
+exclude = "/(\n    \\.eggs\n  | \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = []
+known_first_party = []
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+lines_after_imports = 2
+
+[tool.mypy]
+python_version = "3.11"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+strict_optional = true
+exclude = "tests|package"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+bless = "^0.2.6"
+dbus-next = "^0.2.3"
+nest-asyncio = "^1.6.0"
+configobj = "^5.0.8"
+
+[tool.poetry.scripts]
+r3onboard = "r3onboard.__main__:main"
+package_debian = "package.package:package_debian"
+package_pi = "package.package:package_pi"
+push_to_pi = "package.package:push_to_pi"
+version = "package.package:version"
+versions = "package.package:versions"
+beta_release = "package.package:beta_release"
+rc_release = "package.package:rc_release"
+release = "package.package:release"
+test = "package.package:test"
+
+[tool.pytest.ini_options]
+testpaths = [ "tests",]
+pythonpath = [ "r3onboard",]
+
+[tool.poetry.group.dev.dependencies]
+toml = "^0.10.2"
+requests = "^2.31.0"
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.6"
+black = "^23.1"
+isort = "^5.10.1"
+mypy = "^1.10.0"
+boto3 = "^1.34.135"

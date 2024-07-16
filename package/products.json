@@ -1,0 +1,46 @@
+[
+    {
+        "product_type": "R3_ONBOARD_PACKAGE",
+        "filename": "r3onboard_all.deb",
+        "architecture": "ALL",
+        "platform_type": "DEBIAN"
+    },
+    {
+        "product_type": "R3_ONBOARD_PACKAGE",
+        "filename": "r3onboard_all.deb",
+        "architecture": "ALL",
+        "platform_type": "PI"
+    },
+    {
+      "product_type": "R3_ONBOARD_LITE_IMG",
+      "filename": "raspios-bookworm-arm64-lite-r3onboard.img.xz",
+      "architecture": "ARM64",
+      "platform_type": "PI",
+      "beta": true,
+      "download_path": "https://downloads.raspberrypi.org/raspios_lite_arm64_latest"
+    },
+    {
+      "product_type": "R3_ONBOARD_LITE_IMG",
+      "filename": "raspios-bookworm-armhf-lite-r3onboard.img.xz",
+      "architecture": "ARMHF",
+      "platform_type": "PI",
+      "beta": false,
+      "download_path": "https://downloads.raspberrypi.org/raspios_lite_armhf_latest"
+    },
+    {
+      "product_type": "R3_ONBOARD_IMG",
+      "filename": "raspios-bookworm-arm64-r3onboard.img.xz",
+      "architecture": "ARM64",
+      "platform_type": "PI",
+      "beta": false,
+      "download_path": "https://downloads.raspberrypi.org/raspios_arm64_latest"
+    },
+    {
+      "product_type": "R3_ONBOARD_IMG",
+      "filename": "raspios-bookworm-armhf-r3onboard.img.xz",
+      "architecture": "ARMHF",
+      "platform_type": "PI",
+      "beta": false,
+      "download_path": "https://downloads.raspberrypi.org/raspios_armhf_latest"
+    }
+]

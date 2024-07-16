@@ -1,0 +1,6 @@
+# /etc/r3onboard/config.ini
+[Settings]
+# Set the ble duration (-1 for infinite)
+Duration = 10m
+# Set Log Level (debug, info, warning, error, critical)
+LogLevel = info

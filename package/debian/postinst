@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+PACKAGE_NAME="r3onboard"
+VENV_DIR="/opt/$PACKAGE_NAME/venv"
+PACKAGE_DIR="/opt/r3onboard/r3onboard-<PACKAGE_VERSION>-py3-none-any.whl"
+CONFIG_FILE="/etc/r3onboard/config.ini"
+DEFAULT_CONFIG_FILE="/etc/r3onboard/config.ini.default"
+
+# # If the config file doesn't exist, copy the default
+# if [ ! -f "$CONFIG_FILE" ]; then
+#     cp "$DEFAULT_CONFIG_FILE" "$CONFIG_FILE"
+# fi
+
+# # Ensure correct permissions
+# chmod 644 "$CONFIG_FILE"
+
+# Create a virtual environment
+python3 -m venv $VENV_DIR
+
+# Activate the virtual environment and install the package
+. $VENV_DIR/bin/activate
+pip install --force-reinstall $PACKAGE_DIR
+
+# Update config file
+/opt/r3onboard/venv/bin/python3 -m r3onboard update-config
+
+# Enable the service
+systemctl enable r3onboard.service

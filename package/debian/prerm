@@ -1,0 +1,27 @@
+#!/bin/bash
+
+PACKAGE_NAME="r3onboard"
+VENV_DIR="/opt/$PACKAGE_NAME/venv"
+CONFIG_FILE="/etc/r3onboard/config.ini"
+
+# Stop the service if it is active
+if systemctl is-active --quiet r3onboard.service; then
+    systemctl stop r3onboard.service
+fi
+
+# Disable the service to not start on boot anymore
+if systemctl is-enabled --quiet r3onboard.service; then
+    systemctl disable r3onboard.service
+fi
+
+# Activate the virtual environment and uninstall the package
+if [ -d "$VENV_DIR" ]; then
+    . $VENV_DIR/bin/activate
+    pip uninstall r3onboard -y
+    # remove the virtual environment
+    rm -rf $VENV_DIR
+fi
+
+if [ "$1" = "purge" ]; then
+    rm -f "$CONFIG_FILE"
+fi

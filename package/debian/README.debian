@@ -1,0 +1,65 @@
+
+# r3onboard - A Package for Setting Up IoT Devices
+
+## Description
+
+**r3onboard** is a Python-based service designed to help configure and manage IoT devices such as Raspberry Pis.
+
+## Installation
+
+To install the **r3onboard** package, simply use your package manager:
+
+```bash
+sudo apt update
+sudo apt install r3onboard
+```
+
+## Usage
+
+Once installed, the **r3onboard** service will be configured to start automatically at boot. You can manually start, stop, enable, and disable the service using the following systemd commands:
+
+### Starting the Service
+
+```bash
+sudo systemctl start r3onboard.service
+```
+
+### Stopping the Service
+
+```bash
+sudo systemctl stop r3onboard.service
+```
+
+### Enabling the Service at Boot (default behavior)
+
+```bash
+sudo systemctl enable r3onboard.service
+```
+
+### Disabling the Service at Boot
+
+```bash
+sudo systemctl disable r3onboard.service
+```
+
+## Timer for Automatic Stop
+
+The package includes a systemd timer to automatically stop the **r3onboard** service 5 minutes after boot. You can manage this timer with the following commands:
+
+### Stopping the Timer
+
+```bash
+sudo systemctl stop r3onboard-stop.timer
+```
+
+### Enabling the Timer at Boot (default behavior)
+
+```bash
+sudo systemctl enable r3onboard-stop.timer
+```
+
+### Disabling the Timer at Boot
+
+```bash
+sudo systemctl disable r3onboard-stop.timer
+```

@@ -1,0 +1,12 @@
+[Unit]
+Description=Remote.it Onboard Tool
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/r3onboard/venv/bin/python3 -m r3onboard
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

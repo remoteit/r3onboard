@@ -1,0 +1,7 @@
+{
+  "mypy.runUsingActiveInterpreter": true,
+  "python.analysis.extraPaths": [
+    "./tests/test_"
+  ],
+  "python.analysis.typeCheckingMode": "off",
+}

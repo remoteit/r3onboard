@@ -149,7 +149,7 @@ COMMISSION_SERVICE_UUID = f"0000a000-{BASE_UUID}"
 - List of `ssid` and `signal`
 
 #### COMMAND (Write)
-- UUID: `CONNECT_CHARACTERISTIC_UUID = f"0000a020{BASE_UUID}"`
+- UUID: `COMMAND_CHARACTERISTIC_UUID = f"0000a020{BASE_UUID}"`
 - Example JSON string:
     ```json
     {
